@@ -4,7 +4,10 @@ import knex from 'knex';
 const connection = knex({
   client: 'pg',
   connection: {
-    filename: path.resolve(__dirname, '..', '..', 'development')
+    host : '127.0.0.1',
+    user : 'postgres',
+    password : 'docker',
+    database : 'e-coleta'
   },
   useNullAsDefault: true
 });
