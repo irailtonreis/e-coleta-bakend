@@ -1,10 +1,15 @@
 import path from 'path';
 
 module.exports = {
-  client: 'sqlite3',
+  development: {
+    client: 'pg',
+    version: '19.03',
   connection: {
-    filename: path.resolve(__dirname, 'src', 'database', 'database.sqlite'),
-  },
+      host : '127.0.0.1',
+      user : 'postgres',
+      password : 'docker',
+      database : 'e-coleta'
+    },
   migrations: {
    directory: path.resolve(__dirname, 'src', 'database', 'migrations'),
   },
@@ -12,4 +17,5 @@ module.exports = {
     directory: path.resolve(__dirname, 'src', 'database', 'seeds'),
    },
   useNullAsDefault: true,
+},
 }
